@@ -1,0 +1,78 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AgAutomate Task Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <!-- Back Button (hidden until a tool is opened) -->
+        <button id="back-btn" class="back-btn" style="display:none;" title="Back">◀</button>
+
+        <img src="../../assets/a_leaf_64.png" alt="AgVantis" title="AgAutomate" />
+        <h1 class="ms-font-su" >AgAutomate</h1>
+        <button id="settings-btn" class="settings-btn" title="Settings">⚙</button>
+    </header>
+
+    <!-- Sideload message (unchanged) -->
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">
+            Please <a target="_blank" rel="noopener"
+            href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">
+            sideload</a> your add-in to see app body.
+        </h2>
+    </section>
+
+    <div id="confirm-dialog" class="modal hidden">
+        <div class="modal-content">
+            <p id="confirm-message"></p>
+            <button id="confirm-yes">Yes</button>
+            <button id="confirm-no">No</button>
+        </div>
+    </div>
+
+    <!-- Main App Body -->
+    <main id="app-body" class="ms-welcome__main" style="display: none;">
+        <!-- Main Menu (dynamically populated based on user settings) -->
+        <div id="main-menu" class="menu">
+            <!-- Menu buttons will be dynamically generated here -->
+        </div>
+
+        <div id="module-container"></div>
+        <!-- NEW: Module container --> 
+        <div id="cashflow-module" class="tool-ui hidden"></div>
+        <div id="chron-ui" class="tool-ui hidden" ></div>
+        <div id="participation-ui" class="tool-ui hidden"></div>
+        <div id="fccg-billings-ui" class="tool-ui hidden"></div>
+        <div id="fccg-variance-ui" class="tool-ui hidden"></div>
+        <div id="file-maintenance-ui" class="tool-ui hidden"></div>
+        <div id="pdf-ui" class="tool-ui hidden"></div>
+        <div id="vendor-ui" class="tool-ui hidden"></div>
+        <div id="wire-ui" class="tool-ui hidden"></div>
+        <div id="other-ui" class="tool-ui hidden"></div>
+    </main>
+
+    <div id="status-panel" class="status-panel">
+        <span id="status-text">Checking service health...</span>
+        <button id="refresh-health-btn" class="refresh-icon-btn" title="Refresh service health status">
+            <img src="../../assets/refresh.png" class="refresh-icon" alt="Refresh" />
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- Settings Dialog -->
+<div id="settings-dialog" class="modal hidden">
+    <div class="modal-content settings-modal">
+        <div class="settings-header">
+            <h2 class="ms-font-xl">Settings</h2>
+            <button id="settings-close" class="settings-close-btn" aria-label="Close settings">×</button>
+        </div>
+        
+        <div class="settings-body">
+            <div class="settings-section">
+                <h3 class="ms-font-l">Enabled Modules</h3>
+                <p class="ms-font-s settings-description">
+                    Select which modules should appear in the taskpane menu.
+                </p>
+                <div id="modules-list" class="modules-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-footer">
+            <button id="settings-reset" class="ms-Button ms-Button--default">Reset to Defaults</button>
+            <div class="settings-actions">
+                <button id="settings-save" class="ms-Button ms-Button--primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

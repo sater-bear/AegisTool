@@ -1,0 +1,667 @@
+/* 
+ * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+ * See LICENSE in the project root for license information.
+ */
+
+ html,
+ body {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     position: relative;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-flex-direction: column;
+     -ms-flex-direction: column;
+     flex-direction: column;
+ }
+ 
+ ul {
+     margin: 0;
+     padding: 0;
+ }
+ 
+/* Shrink header height */
+.ms-welcome__header {
+    padding: 4px 8px !important;
+    height: 40px !important;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+/* Back button positioning */
+.back-btn {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* Shrink the logo - positioned to the left of the title */
+.ms-welcome__header img {
+    height: 24px !important;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(calc(-50% - 72px), -50%);
+    -ms-transform: translate(calc(-50% - 72px), -50%);
+    transform: translate(calc(-50% - 72px), -50%);
+    z-index: 1;
+}
+
+/* Center the title */
+.ms-welcome__header h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 16px !important;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+
+ .ms-welcome__header_delete {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+ }
+
+ .ms-welcome__main {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex: 1 0 0;
+    -ms-flex: 1 0 0;
+    flex: 1 0 0;
+    padding: 10px 20px;
+    position: relative;
+    min-height: 0; /* Allow flex children to shrink */
+    padding-bottom: 50px; /* Add bottom padding to account for fixed status panel */
+    margin-bottom: 0;
+ }
+ 
+ .ms-welcome__main > h2 {
+     width: 100%;
+     text-align: center;
+ }
+ 
+ .ms-welcome__features {
+     list-style-type: none;
+     margin-top: 20px;
+ }
+ 
+ .ms-welcome__features.ms-List .ms-ListItem {
+     padding-bottom: 20px;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+ }
+ 
+ .ms-welcome__features.ms-List .ms-ListItem > .ms-Icon {
+     margin-right: 10px;
+ }
+ 
+ .ms-welcome__action.ms-Button--hero {
+     margin-top: 30px;
+ }
+ 
+.ms-Button.ms-Button--hero .ms-Button-label {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--hero:hover .ms-Button-label,
+.ms-Button.ms-Button--hero:focus .ms-Button-label{
+  color: #005a9e;
+  cursor: pointer;
+}
+
+b {
+    font-weight: bold;
+}
+
+/* Main menu layout */
+/* Main menu layout */
+.menu {
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-flex-direction: column !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+    row-gap: 5px !important;   /* explicit vertical spacing */
+    margin-top: 10px;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+/* Menu buttons */
+.menu-btn {
+    background-color: rgb(81, 152, 65); /* your green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;               /* all same width */
+    box-sizing: border-box;    /* ensures padding doesn't change width */
+    text-align: left;          /* keeps text aligned nicely */
+}
+
+/* Hover effect */
+.menu-btn:hover {
+    background-color: rgb(65, 122, 52); /* slightly darker green */
+}
+
+/* Back button */
+.back-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #417a34;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.back-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.back-btn:active {
+    background-color: #e0e0e0;
+}
+
+/* Tool UI containers */
+.tool-ui {
+    margin-top: 10px;
+}
+
+/* Module container - allow scrolling */
+#module-container {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 0; /* Allow flex child to shrink */
+    padding-bottom: 60px; /* Add padding to prevent content from being hidden behind fixed status panel */
+    box-sizing: border-box;
+}
+
+/* Loading spinner */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0078d4;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Status panel */
+/* Status panel container - docked to bottom of body */
+.status-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 12px;
+    border-top: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    background: #fafafa;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; /* text left, icon right */
+    gap: 10px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+/* Status text */
+#status-text {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* Refresh icon button */
+.refresh-icon-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.refresh-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.refresh-icon-btn:hover .refresh-icon {
+    opacity: 0.7;
+}
+
+/* Status dots */
+.status-ok::before {
+    content: "●";
+    color: green;
+    margin-right: 8px;
+    font-size: 15pt;
+}
+
+.status-bad::before {
+    content: "●";
+    color: red;
+    margin-right: 8px;
+    font-size: 15pt;
+}
+
+.status-success {
+    background-color: #fde7e9;
+    color: #107c10;
+}
+
+.status-error {
+    background-color: #fde7e9;
+    color: #a80000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Cash Flow Analysis buttons container */
+.cf-buttons {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Cash Flow icon buttons */
+.cf-btn {
+    background: none;          /* remove green background */
+    border: none;              /* no border */
+    padding: 0;                /* no padding */
+    margin: 0;
+    cursor: pointer;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 6px;                  /* small space between icon and text */
+}
+
+/* Icon size */
+.cf-icon {
+    width: 28px;               /* adjust to your preferred size */
+    height: 28px;
+    object-fit: contain;
+    background: none;
+}
+
+/* Optional: text styling */
+.cf-btn span {
+    font-size: 14px;
+    color: black;              /* or whatever fits your theme */
+}
+
+/* Optional hover effect */
+.cf-btn:hover .cf-icon {
+    opacity: 0.7;
+}
+
+/* Section header with title */
+.cf-section {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 2px 0;
+}
+
+/* The line */
+.cf-section::before,
+.cf-section::after {
+    content: "";
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border-bottom: 2px solid #999;   /* thicker line */
+}
+
+/* The title text */
+.cf-section-title {
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    white-space: nowrap;
+}
+.refresh-btn {
+    margin-top: 10px;
+    background: none;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.refresh-btn:hover {
+    background: #f2f2f2;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Settings Dialog Styles */
+.settings-modal {
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.settings-header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.settings-header h2 {
+    margin: 0;
+}
+
+.settings-close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.settings-close-btn:hover {
+    color: #000;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.settings-body {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+}
+
+.settings-section h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.settings-description {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 13px;
+}
+
+.settings-section select,
+.settings-section .ms-Dropdown {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.settings-section select:hover,
+.settings-section .ms-Dropdown:hover {
+    border-color: #0078d4;
+}
+
+.settings-section select:focus,
+.settings-section .ms-Dropdown:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
+
+.modules-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.module-item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.module-item:hover {
+    background-color: #f5f5f5;
+}
+
+.module-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.module-label {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 14px;
+}
+
+.settings-footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.settings-actions {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+}
+
+/* Settings button in header */
+.settings-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 30px;
+    color: #417a34;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-left: auto;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.settings-btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.settings-btn:active {
+    background-color: #e0e0e0;
+}
